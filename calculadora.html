@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        body{
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+            margin-top: 20%;
+        }
+        #elementos{
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            word-spacing: 20px;
+            margin-top: 20px;
+        }
+
+        #elementos input{
+            height: 40px;
+            border-radius: 20px;
+            border: 0ch;
+            font-size: 20pt;
+            width: 150px;
+        }
+
+        #calcular{
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            background-color: white;
+            color: #090979;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16pt;
+            width: 200px;
+            height: 30px;
+            border-radius: 20px;
+            margin-top: 20px;
+            transform:translate();
+            transition: 1s;
+        }
+
+        #calcular:hover{
+            width: 210px;
+            height: 35px;
+            background-color: rgb(216, 213, 213);
+        }
+
+        #res{
+            font-size: 16pt;
+            color: white;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: white;">Somar Números</h1>
+
+    <div id="elementos">
+        <input type="number" name="n1" id="n1">
+        &nbsp;<h1 style="color: white;">+</h1>&nbsp;
+        <input type="number" name="n2" id="n2">
+    </div>
+
+    <div id="calcular" onclick="calcular()">
+        <strong>Calcular</strong>
+    </div>
+
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var v1 = document.getElementById('n1')
+            var v2 = document.getElementById('n2')
+
+            var nv1 = Number(v1.value)
+            var nv2 = Number(v2.value)
+
+            var resultado = nv1 + nv2
+
+            var res = document.getElementById('res')
+
+            res.innerText = `A soma entre ${nv1} e ${nv2} é ${resultado}`
+        }
+    </script>
+</body>
+</html>
